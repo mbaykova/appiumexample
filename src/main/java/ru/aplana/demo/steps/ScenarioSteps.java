@@ -1,6 +1,5 @@
 package ru.aplana.demo.steps;
 
-import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -11,17 +10,17 @@ import static ru.aplana.demo.steps.BaseSteps.getDriver;
  */
 public class ScenarioSteps {
 
-	@When("выполнен переход на страницу \"(.*)\"")
+
 	public void stepGoToMainPage(String url){
 		getDriver().get(url);
 	}
 
-	@When("открыто приложение РЖД")
+
 	public void stepOpenRZD(String url){
 		getDriver().get(url);
 	}
 
-	@When("поле \"(.*)\" заполняется значением \"(.*)\"")
+
 	public void stepFillField(String field, String value){
 		switch (field){
 			case "Найти":
@@ -37,32 +36,36 @@ public class ScenarioSteps {
 		}
 	}
 
-	@When("выполнено нажатие на кнопку Найти")
+
 	public void stepClickSearch(){
 		getDriver().findElement(By.xpath("(//button[text()='Найти'])[1]")).click();
 	}
 
-	@When("выполнено нажатие на кнопку Продолжить")
+
 	public void stepClickGo(){
 		getDriver().findElement(By.xpath(".//*[@text='Продолжить']")).click();
 	}
 
-	@When("выполнено нажатие на кнопку Принимаю")
+	public void stepSelectLanguage(){
+		getDriver().findElement(By.xpath(".//*[@text='Русский']")).click();
+	}
+
+
 	public void stepClickAccept(){
 		getDriver().findElement(By.xpath(".//*[@text='Принимаю']")).click();
 	}
 
-	@When("выполнено нажатие на кнопку Пропустить")
+
 	public void stepClickCancel(){
 		getDriver().findElement(By.xpath(".//*[@text='Пропустить']")).click();
 	}
 
-	@When("выполнено нажатие на кнопку Войти")
+
 	public void stepClickEnter(){
 		getDriver().findElement(By.xpath(".//*[@text='Войти']")).click();
 	}
 
-	@When("значение поля \"(.*)\" равно \"(.*)\"")
+
 	public void stepCheckFillField(String field, String value){
 		switch (field){
 			case "Результат поиска":

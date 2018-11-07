@@ -1,11 +1,12 @@
 package ru.aplana.demo.steps;
 
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
@@ -22,7 +23,7 @@ public class BaseSteps {
 		return driver;
 	}
 
-	@Before("@native")
+	@Before
 	public void setUpNative() throws Exception {
 		//Определяем desired capabilities
 		DesiredCapabilities caps = new DesiredCapabilities();
@@ -36,6 +37,8 @@ public class BaseSteps {
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
+
+
 
 
 //	@Before("@web")
@@ -52,7 +55,7 @@ public class BaseSteps {
 //
 
 	/* We disable the driver after EACH test has been executed. */
-	@After("@native")
+	@After
 	public void teardown() {
 		driver.closeApp();
 	}
