@@ -34,7 +34,7 @@ public class BaseSteps {
 		caps.setCapability("appActivity", "ru.rzd.app.common.gui.SplashActivity");
 
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 	}
 
 
