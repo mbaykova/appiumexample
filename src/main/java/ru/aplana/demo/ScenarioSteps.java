@@ -75,4 +75,9 @@ public class ScenarioSteps {
 				break;
 		}
 	}
+
+	@When("выбран Русский язык")
+	public void stepSelectLanguage(){
+		driver.findElement(By.xpath(".//*[@text='Русский']")).click();
+	}
 }
