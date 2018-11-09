@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/test.feature"},
+@CucumberOptions(features = {"classpath:features"},
         glue = {"ru.aplana.demo"}, plugin = {"pretty"}
 )
 public class CucumberTest {
